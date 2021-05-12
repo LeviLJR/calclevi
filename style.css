@@ -1,0 +1,219 @@
+:root {
+  --dark-blue: #0E2453;
+  --red: #FF2F2F;
+  --yellow: #FFC52F;
+  --light-black: #08080A;
+  --black: #000000;
+  --white: #FFFFFF;
+  --gray-white: rgba(255, 255, 255, 0.68);
+  --light-white: rgba(255, 255, 255, 0.83);
+  --gray: #8A8D94;
+  --blue: #5C88F6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100vh;
+  margin: 0 1.5rem;
+  font-weight: 300;
+}
+
+.dark {
+  background: var(--dark-blue);
+}
+
+.light {
+  background: var(--blue);
+}
+
+header {
+  color: var(--white);
+  /* color: var(--black); */
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  /* background-color: var(--white); 
+  border-radius: 0 0 5px 5px; */
+  align-items: center;
+}
+
+.logo img {
+  width: 3.5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  margin: 0 0.5rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.calculator {
+  border: solid var(--black);
+  border-radius: 23px;
+  border-width: 1.5rem 0.35rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.dark .calculator {
+  background-color: var(--light-black);
+}
+
+.light .calculator {
+  background-color: var(--light-white);
+}
+
+.switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  /* transition: background-color 0.4s ; */
+}
+
+.dark .switch {
+  background-color: rgb(255, 255, 255);
+  width: 4.3rem;
+  height: 4.3rem;
+}
+
+.light .switch {
+  background: none;
+  height: 5.16rem;
+  width: 5.16rem;
+}
+
+/* .switch:focus {
+  background-color: rgba(255, 255, 255, 0.9);
+} */
+
+.dark .switch img {
+  width: 55%;
+}
+
+.light .switch img {
+  width: 100%;
+}
+
+.display {
+  margin-top: 2rem;
+  margin-right: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.display span {
+  margin-left: auto;
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gray);
+}
+
+.display p {
+  margin-left: auto;
+  margin-bottom: 0.8rem;
+  font-size: 3.5rem;
+  font-weight: 400;
+}
+
+.dark .display p {
+  color: var(--white);
+}
+
+.light .diplay p {
+  color: var(--black)
+}
+
+.keyboard {
+  width: calc(4 * 3.6rem);
+  display: flex;
+  justify-content: space-between;
+  align-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.keyboard button {
+  background: none;
+  border: none;
+  width: 3.6rem;
+  height: 3.6rem;
+}
+
+.special {
+  color: var(--red);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.operator {
+  color: var(--yellow);
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.basic {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.dark .basic {
+  color: var(--gray-white);
+}
+.light .basic {
+  color: var(--black)
+}
+
+.basic img {
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark .basic img {
+  filter: invert(0.7);
+}
+
+.equal span {
+  padding: 0.35rem calc(7.65px + 0.35rem);
+  border-radius: 0.3rem;
+  background-color: var(--yellow);
+  color: var(--white);
+}
+
+footer img {
+  width: 1.1rem;
+  margin-right: 0.2rem;
+}
+
+footer {
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  margin: 1rem 0;
+}
+
+/* border: 1px solid green; */
