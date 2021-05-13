@@ -1,108 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calclevi</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>calclevi</title>
+    <link rel="icon" href="./library/logo.svg" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-  <link rel="icon" href="./library/logo.svg">
-  <link rel="stylesheet" href="./style.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-
-<body class="dark">
-  <header>
-    <div class="logo">
-      <img src="./library/logo.svg">
-      <h1>CALC LEVI</h1>
-    </div>
-
-    <button class="switch">
-      <img src="./library/lua.svg">
-    </button>
-  </header>
-
-  <main>
-    <section class="calculator">
-      <div class="display">
-        <span>11 + 9 + 1</span>
-        <p>21</p>
+  <body class="dark">
+    <header>
+      <div class="logo">
+        <img src="./library/logo.svg" />
+        <h1>CALC LEVI</h1>
       </div>
 
-      <div class="keyboard">
-        <button class="special">
-          AC
-        </button>
-        <button class="special">
-          &plusmn;
-        </button>
-        <button class="special">
-          %
-        </button>
-        <button class="operator">
-          ÷
-        </button>
-        <button class="basic">
-          7
-        </button>
-        <button class="basic">
-          8
-        </button>
-        <button class="basic">
-          9
-        </button>
-        <button class="operator">
-          x
-        </button>
-        <button class="basic">
-          4
-        </button>
-        <button class="basic">
-          5
-        </button>
-        <button class="basic">
-          6
-        </button>
-        <button class="operator">
-          –
-        </button>
-        <button class="basic">
-          1
-        </button>
-        <button class="basic">
-          2
-        </button>
-        <button class="basic">
-          3
-        </button>
-        <button class="operator">
-          +
-        </button>
-        <button class="basic">
-          0
-        </button>
-        <button class="basic">
-          .
-        </button>
-        <button class="basic">
-          <img src="./library/delete.svg">
-        </button>
-        <button class="operator equal">
-          <span>=</span>
-        </button>
-      </div>
-    </section>
-  </main>
+      <button class="switch" onclick="switchMode()">
+        <img id="switch-img" src="./library/lua.svg" />
+      </button>
+    </header>
 
-  <script src="script.js"></script>
-</body>
-<footer>
-  <img src="library/circle-outline.svg">
-  Copyright Levi Liberman Júnior, 2021.
-</footer>
+    <main>
+      <section class="calculator">
+        <div class="screen">
+          <span id="history">no history</span>
+          <p id="display">0</p>
+        </div>
+
+        <div class="keyboard">
+          <button id="erase" class="special">AC</button>
+          <button id="plusMinus" class="special" style="font-size: 30px;">&plusmn;</button>
+          <button id="percent"class="special">( )</button>
+          <button class="operator">÷</button>
+          <button class="basic">7</button>
+          <button class="basic">8</button>
+          <button class="basic">9</button>
+          <button class="operator">x</button>
+          <button class="basic">4</button>
+          <button class="basic">5</button>
+          <button class="basic">6</button>
+          <button class="operator" style="font-size: 35px;">-</button>
+          <button class="basic">1</button>
+          <button class="basic">2</button>
+          <button class="basic">3</button>
+          <button class="operator">+</button>
+          <button class="basic">0</button>
+          <button id="decimal" class="basic">.</button>
+          <button id="delete" class="basic"><img src="./library/delete.svg" /></button>
+          <button class="operator equal">
+            <span>=</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+  <footer>
+    <img src="library/circle-outline.svg" />
+    Copyright Levi Liberman Júnior, 2021.
+  </footer>
 </html>

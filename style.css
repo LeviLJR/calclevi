@@ -9,6 +9,7 @@
   --light-white: rgba(255, 255, 255, 0.83);
   --gray: #8A8D94;
   --blue: #5C88F6;
+  --gray-ligth: rgb(151, 152, 156);
 }
 
 * {
@@ -114,34 +115,48 @@ main {
   width: 100%;
 }
 
-.display {
+.screen {
+  width: 208px;
   margin-top: 2rem;
   margin-right: 0.7rem;
+  margin-left: 0.7rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  text-align: right;
 }
 
-.display span {
-  margin-left: auto;
+.screen span {
+  text-align: right;
+  overflow: hidden;
+  white-space: nowrap;
   margin-top: 1rem;
   font-size: 1rem;
   font-weight: 600;
   color: var(--gray);
 }
 
-.display p {
-  margin-left: auto;
+.screen p {
+  text-anchor: end;
+  display:flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  text-align: right;
+  overflow: hidden;
+  white-space: nowrap;
   margin-bottom: 0.8rem;
-  font-size: 3.5rem;
-  font-weight: 400;
+  font-size: 2.5rem;
+  font-weight:400;
 }
 
-.dark .display p {
+.dark .screen p {
   color: var(--white);
 }
 
-.light .diplay p {
+.light .screen p {
   color: var(--black)
 }
 
@@ -160,6 +175,11 @@ main {
   width: 3.6rem;
   height: 3.6rem;
 }
+
+/*.keyboard button:focus {
+  background-color: var(--gray-ligth);
+  border-radius: .25rem;
+}*/
 
 .special {
   color: var(--red);
