@@ -5,8 +5,8 @@
   --light-black: #08080A;
   --black: #000000;
   --white: #FFFFFF;
-  --gray-white: rgba(255, 255, 255, 0.68);
-  --light-white: rgba(255, 255, 255, 0.83);
+  --gray-white: rgb(183, 184, 190);
+  --light-white: rgb(236, 236, 238);
   --gray: #8A8D94;
   --blue: #5C88F6;
   --gray-ligth: rgb(151, 152, 156);
@@ -28,11 +28,11 @@ body {
 }
 
 .dark {
-  background: var(--dark-blue);
+  background-color: var(--dark-blue);
 }
 
 .light {
-  background: var(--blue);
+  background-color: var(--blue);
 }
 
 header {
@@ -68,8 +68,9 @@ main {
 .calculator {
   border: solid var(--black);
   border-radius: 23px;
-  border-width: 1.5rem 0.35rem;
+  border-width: 1.5rem 0.37rem;
   display: flex;
+  width: auto;
   flex-direction: column;
 }
 
@@ -99,8 +100,8 @@ main {
 
 .light .switch {
   background: none;
-  height: 5.16rem;
-  width: 5.16rem;
+  height: 4.3rem;
+  width: 4.3rem;
 }
 
 /* .switch:focus {
@@ -109,6 +110,125 @@ main {
 
 .dark .switch img {
   width: 55%;
+}
+
+.dark .light-background, .light .dark-background {
+  display: none;
+}
+
+.light .light-background, .dark .dark-background {
+  overflow: hidden;
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.dark .dark-background img {
+  position: absolute;
+  top: 20%;
+  width: 1.5rem;
+  animation: 4s shine infinite alternate;
+}
+
+@keyframes shine {
+  from { opacity: 90%; } 
+  to { opacity: 0%; }
+}
+
+.dark .dark-background .star1 {
+  transform: rotate(180deg);
+  margin-left: 22rem;
+  animation-delay: -3.5s;
+  top: 10%;
+}
+
+.dark .dark-background .star2{
+  margin-left: 8rem;
+  top: 35%;
+  animation-delay: -6.8s;
+  transform: rotate(10);
+}
+
+.dark .dark-background .star3 {
+  transform: rotate(90deg);
+  margin-left: 17rem;
+  animation-delay: -3.8s;
+  top: 68%;
+}
+
+.dark .dark-background .star4 {
+  transform: rotate(90deg);
+  animation-delay: -6.9s;
+  margin-left: 60rem;
+  top: 10%;
+}
+
+.dark .dark-background .star5 {
+  margin-left: 70rem;
+  animation-delay: -3.7s;
+  top: 40%;
+}
+
+.dark .dark-background .star6 {
+  transform: rotate(270deg);
+  animation-delay: -6.7s;
+  margin-left: 60rem;
+  top: 75%;
+}
+
+.light .light-background img {
+  position: absolute;
+  width: 9rem;
+  
+  margin-left: -20vw;
+  animation: 35s slidein infinite linear;
+}
+
+.light .light-background .cloud1 {
+  top: -4%;
+  animation-delay: 29s;
+  animation-timing-function: cubic-bezier(.04,.16,.88,.97);
+}
+
+.light .light-background .cloud2 {
+  top: 7%;
+  animation-timing-function: cubic-bezier(.15,.08,.93,.87);
+}
+.light .light-background .cloud3 {
+  top: 28%;
+  animation-delay: 13s; 
+  animation-timing-function: cubic-bezier(.15,.08,.93,.87);
+}
+
+.light .light-background .cloud4 {
+  top: 50%;
+  animation-delay: 32s;
+  transform: translate(0, -40%);
+  animation-timing-function: cubic-bezier(.54,.62,.81,.94);
+}
+
+.light .light-background .cloud5 {
+  bottom: 15%;
+  animation-delay: 25s;
+  animation-timing-function: cubic-bezier(.29,.4,.48,.59);
+}
+
+.light .light-background .cloud6 {
+  bottom: 1%;
+  animation-delay: 8s;
+  animation-timing-function: cubic-bezier(.28,.41,.76,1);
+}
+
+@keyframes slidein {
+  from { margin-left: -20vw; } 
+  to { margin-left: 100vw; }
+}
+
+.dark .background img {
+  display: none;
 }
 
 .light .switch img {
@@ -166,7 +286,7 @@ main {
   justify-content: space-between;
   align-content: space-around;
   flex-wrap: wrap;
-  margin-bottom: 3rem;
+  margin-bottom: 2.8rem;
 }
 
 .keyboard button {
