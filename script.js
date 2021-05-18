@@ -1,11 +1,10 @@
-const body = document.getElementsByTagName('body')[0];
-const img = document.getElementById('switch-img');
+const body = document.getElementsByTagName("body")[0];
+const img = document.getElementById("switch-img");
 
-const mode = localStorage.getItem('mode');
+const mode = localStorage.getItem("mode");
 
 body.className = mode;
-img.src = mode === 'light' ? "./library/sol.svg" : "./library/lua.svg";
-
+img.src = mode === "light" ? "./library/sol.svg" : "./library/lua.svg";
 
 const calculatorButtons = Array.from(
   document.querySelector(".keyboard").children
@@ -136,10 +135,19 @@ function onClickOperator(element, display) {
 
 // TODO calculadora
 
-function calculate(number1, operator, number2) {
+function calculate(number1, operator, number2, precision) {
+  const decimalLength = (num) => num.toString().split(".")[1]?.length || 0;
+
+  const maxDecimal = Math.max(decimalLength(number1), decimalLength(number2));
+  
+  precision = precision || Math.pow(10, maxDecimal);
+
+  number1 *= precision;
+  number2 *= precision;
+
   let result;
 
-  switch (operator) {
+  switch (operator.toLowerCase()) {
     case "+":
       result = number1 + number2;
       break;
@@ -147,6 +155,7 @@ function calculate(number1, operator, number2) {
       result = number1 - number2;
       break;
     case "x":
+      precision = Math.pow(precision, 2);
       result = number1 * number2;
       break;
     case "÷":
@@ -155,7 +164,8 @@ function calculate(number1, operator, number2) {
     default:
       return "error";
   }
-  return result;
+  
+  return result/precision;
 }
 
 // TODO RESULT
@@ -177,13 +187,13 @@ const showResult = () => {
 };
 
 const switchMode = () => {
-  if ( body.className === "dark") {
-    body.className = "light"
-    img.src = "./library/sol.svg"
+  if (body.className === "dark") {
+    body.className = "light";
+    img.src = "./library/sol.svg";
   } else {
-    body.className = "dark"
-    img.src = "./library/lua.svg"
+    body.className = "dark";
+    img.src = "./library/lua.svg";
   }
 
-  localStorage.setItem('mode', body.className);
+  localStorage.setItem("mode", body.className);
 };

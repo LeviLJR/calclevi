@@ -27,7 +27,7 @@ Now in the light and dark version, test now and surprise.
 
 <h2 id="features">:sparkles: New Features</h2>
 
-Done background!
+Done background! 
 
 <h2 id="computer-exemple">:desktop_computer: Exemple</h2>
 
