@@ -3,8 +3,15 @@ const img = document.getElementById("switch-img");
 
 const mode = localStorage.getItem("mode");
 
-body.className = mode;
-img.src = mode === "light" ? "./library/sol.svg" : "./library/lua.svg";
+if (mode === "light" || mode === "dark") {
+  body.className = mode;
+} else {
+  body.className = 'light';
+}
+
+if(body.className){
+  img.src = body.className === "light" ? "./library/sol.svg" : "./library/lua.svg";
+}
 
 const calculatorButtons = Array.from(
   document.querySelector(".keyboard").children
